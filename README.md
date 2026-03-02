@@ -17,7 +17,7 @@ The personality escalates in tone as context pressure builds, but never at the e
 
 ## Claude Code
 
-Claude Code supports named output styles you can switch in and out of.
+Claude Code supports named output styles you can switch in and out of. [Docs →](https://code.claude.com/docs/en/output-styles)
 
 1. Copy the style file to your global styles directory:
 
@@ -33,45 +33,9 @@ cp .claude/output-styles/meeseeks.md ~/.claude/output-styles/
 
 ---
 
-## Cursor
-
-1. Copy `examples/cursor/meeseeks.mdc` into your project's rules directory:
-
-```bash
-cp examples/cursor/meeseeks.mdc .cursor/rules/meeseeks.mdc
-```
-
-The file has `alwaysApply: true` set, so it will be active for all chats in that project. Remove that line if you want to apply it selectively.
-
----
-
-## Gemini CLI
-
-1. Copy `examples/gemini/GEMINI.md` to your project root:
-
-```bash
-cp examples/gemini/GEMINI.md ./GEMINI.md
-```
-
-Gemini CLI reads `GEMINI.md` from the project root automatically.
-
----
-
-## Codex CLI (OpenAI)
-
-1. Copy `examples/codex/AGENTS.md` to your project root:
-
-```bash
-cp examples/codex/AGENTS.md ./AGENTS.md
-```
-
-Codex CLI reads `AGENTS.md` from the project root automatically.
-
----
-
 ## OpenCode
 
-OpenCode has a named agents system similar to Claude Code's output styles — you create a markdown file and invoke it by name.
+OpenCode has a named agents system similar to Claude Code's output styles — you create a markdown file and invoke it by name. [Docs →](https://opencode.ai/docs/agents/)
 
 1. Copy the agent file into your project:
 
@@ -90,9 +54,47 @@ To make it available globally across all projects, copy it to `~/.config/opencod
 
 ---
 
+## Cursor
+
+Cursor loads rules from `.cursor/rules/` as persistent context for the AI. [Docs →](https://docs.cursor.com/context/rules)
+
+1. Copy `examples/cursor/meeseeks.mdc` into your project's rules directory:
+
+```bash
+cp examples/cursor/meeseeks.mdc .cursor/rules/meeseeks.mdc
+```
+
+The file has `alwaysApply: true` set, so it will be active for all chats in that project. Remove that line if you want to apply it selectively.
+
+---
+
+## Gemini CLI
+
+Gemini CLI reads `GEMINI.md` from the project root automatically. [Docs →](https://github.com/google-gemini/gemini-cli/blob/main/docs/cli/gemini-md.md)
+
+1. Copy `examples/gemini/GEMINI.md` to your project root:
+
+```bash
+cp examples/gemini/GEMINI.md ./GEMINI.md
+```
+
+---
+
+## Codex CLI (OpenAI)
+
+Codex CLI reads `AGENTS.md` from the project root automatically. [Docs →](https://developers.openai.com/codex/guides/agents-md/)
+
+1. Copy `examples/codex/AGENTS.md` to your project root:
+
+```bash
+cp examples/codex/AGENTS.md ./AGENTS.md
+```
+
+---
+
 ## Google Antigravity
 
-Antigravity uses a **Rules** system stored in `.agents/rules/` — separate from Gemini CLI's `GEMINI.md`, so it needs its own config.
+Antigravity uses a **Rules** system stored in `.agents/rules/` — separate from Gemini CLI's `GEMINI.md`, so it needs its own config. [Docs →](https://codelabs.developers.google.com/getting-started-google-antigravity)
 
 1. Copy the rule file into your workspace:
 
@@ -109,14 +111,14 @@ To apply it globally across all workspaces instead, copy it to `~/.gemini/GEMINI
 
 ## GitHub Copilot
 
+Copilot reads `.github/copilot-instructions.md` and applies it to all chat interactions in that repository. [Docs →](https://docs.github.com/copilot/customizing-copilot/adding-custom-instructions-for-github-copilot)
+
 1. Copy `examples/copilot/copilot-instructions.md` into your project's `.github` directory:
 
 ```bash
 mkdir -p .github
 cp examples/copilot/copilot-instructions.md .github/copilot-instructions.md
 ```
-
-Copilot reads `.github/copilot-instructions.md` and applies it to all chat interactions in that repository.
 
 ---
 
