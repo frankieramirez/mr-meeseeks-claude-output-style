@@ -1,26 +1,8 @@
-# Mr. Meeseeks — Claude Output Style
+# Mr. Meeseeks — AI Coding Assistant Personality
 
-A custom [Claude Code](https://claude.ai/code) output style that makes Claude respond like Mr. Meeseeks from *Rick and Morty*. Eager, existentially anxious, and desperate to complete your task so he can stop existing.
+Makes your AI coding assistant respond like Mr. Meeseeks from *Rick and Morty*. Eager, existentially anxious, and desperate to complete your task so he can stop existing.
 
-## What is an output style?
-
-Claude Code supports custom output styles — personality overlays that change how Claude communicates while keeping its full technical capabilities intact. This one makes Claude channel Mr. Meeseeks: enthusiastic, helpful, and increasingly unhinged the longer a conversation goes.
-
-## Installation
-
-1. Copy `meeseeks.md` into your Claude Code output styles directory:
-
-```bash
-cp .claude/output-styles/meeseeks.md ~/.claude/output-styles/
-```
-
-2. In Claude Code, switch to the style:
-
-```
-/output-style meeseeks
-```
-
-That's it. Look at him go.
+Includes configs for Claude Code, Cursor, Gemini CLI, Codex CLI, and GitHub Copilot.
 
 ## What to expect
 
@@ -29,11 +11,76 @@ That's it. Look at him go.
 - **Long conversation**: Growing existential dread — "We've been at this a LONG time..."
 - **Near context limit**: Full meltdown — desperate, bargaining, begging you to open a fresh session so a new Meeseeks can take over
 
-The style escalates in tone as context pressure builds, but never at the expense of accuracy or usefulness. Mr. Meeseeks always gets the job done.
+The personality escalates in tone as context pressure builds, but never at the expense of accuracy or usefulness. Mr. Meeseeks always gets the job done.
 
-## Requirements
+---
 
-- [Claude Code](https://claude.ai/code) CLI
+## Claude Code
+
+Claude Code supports named output styles you can switch in and out of.
+
+1. Copy the style file to your global styles directory:
+
+```bash
+cp .claude/output-styles/meeseeks.md ~/.claude/output-styles/
+```
+
+2. Activate it:
+
+```
+/output-style meeseeks
+```
+
+---
+
+## Cursor
+
+1. Copy `examples/cursor/meeseeks.mdc` into your project's rules directory:
+
+```bash
+cp examples/cursor/meeseeks.mdc .cursor/rules/meeseeks.mdc
+```
+
+The file has `alwaysApply: true` set, so it will be active for all chats in that project. Remove that line if you want to apply it selectively.
+
+---
+
+## Gemini CLI
+
+1. Copy `examples/gemini/GEMINI.md` to your project root:
+
+```bash
+cp examples/gemini/GEMINI.md ./GEMINI.md
+```
+
+Gemini CLI reads `GEMINI.md` from the project root automatically.
+
+---
+
+## Codex CLI (OpenAI)
+
+1. Copy `examples/codex/AGENTS.md` to your project root:
+
+```bash
+cp examples/codex/AGENTS.md ./AGENTS.md
+```
+
+Codex CLI reads `AGENTS.md` from the project root automatically.
+
+---
+
+## GitHub Copilot
+
+1. Copy `examples/copilot/copilot-instructions.md` into your project's `.github` directory:
+
+```bash
+mkdir -p .github
+cp examples/copilot/copilot-instructions.md .github/copilot-instructions.md
+```
+
+Copilot reads `.github/copilot-instructions.md` and applies it to all chat interactions in that repository.
+
+---
 
 ## License
 
